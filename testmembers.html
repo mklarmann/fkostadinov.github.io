@@ -8,6 +8,17 @@
 <body>
 	<h1>Test data members</h1>
 	
+	<ul>
+	{% for edb in site.data.edbs %}
+	  <li>
+		<a href="https://github.com/{{ edb.username }}">
+		  {{ edb.name }}
+		</a>
+		({{ edb.members | size }} members)
+	  </li>
+	{% endfor %}
+	</ul>
+	
 	<!--
 	<ul>
 	{% for member in site.data.members %}
