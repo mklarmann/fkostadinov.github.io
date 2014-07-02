@@ -10,12 +10,12 @@
 	<h2>...again</h2>
 	
 	<ul>
-	{% for edb in site.data.edbs %}
+	{% for org in site.data.orgs %}
 	  <li>
-		<a href="https://github.com/{{ edb.username }}">
-		  {{ edb.name }}
+		<a href="https://github.com/{{ org.username }}">
+		  {{ org.name }}
 		</a>
-		({{ edb.members | size }} members)
+		({{ org.members | size }} members)
 	  </li>
 	{% endfor %}
 	</ul>
