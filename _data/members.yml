@@ -1,5 +1,8 @@
-- name: Rotkohl
-  co2: 5.2
+- name: Tom Preston-Werner
+  github: mojombo
 
-- name: Spinat
-  co2: 1.8
+- name: Parker Moore
+  github: parkr
+
+- name: Liu Fengyun
+  github: liufengyun
