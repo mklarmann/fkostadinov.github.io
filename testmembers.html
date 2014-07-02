@@ -10,7 +10,15 @@
 	<h2>...again</h2>
 	
 	<ul>
-	{% for org in site.data.orgs.jekyll.yml %}
+	{% for org in site.data.orgs %}
+		<li>bla
+		</li>
+	{% endfor %}
+	</ul>
+	
+	<!--
+	<ul>
+	{% for org in site.data.orgs %}
 	  <li>
 		<a href="https://github.com/{{ org.username }}">
 		  {{ org.name }}
@@ -19,6 +27,7 @@
 	  </li>
 	{% endfor %}
 	</ul>
+	-->
 	
 	<!--
 	<ul>
