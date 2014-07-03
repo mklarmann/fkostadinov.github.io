@@ -7,5 +7,6 @@ layout: none
 	"state": "{{post.state}}",
 	"employees": "{{post.employees}}",
 	"tags": "{{ post.tags | array_to_sentence_string }}",
-	"categories": "{{post.categories}}"
+	"categories": "{{post.categories}}",
+	"Name_Deutsch": "{{ post.Name_Deutsch }}"
 }{% if forloop.rindex0 > 0 %},{% endif %}{% endfor %}]
