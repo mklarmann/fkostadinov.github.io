@@ -5,6 +5,7 @@
 </div>
 
 <div class="row">
+<!--
 <table class="table table-sriped">
 	<thead>
 			<th style="width:30%;"><span class="sort" data-sort="RECORDID">RECORDID</span></th>
@@ -18,12 +19,13 @@
 			<td class="name">{{ post.RECORDID}}</td>
 			<td class="city">{{ post.Name_Deutsch }}</td>
 			<td class="category">{{ post.kg_CO2 }}</td>
-			<td class="tags">{{ post.Autor }}</td>
+			<td class="tags">{{ post.Autor | array_to_sentence_string }}</td>
 		</tr>
 	{% endfor %}
 	</tbody>
 </table>
-<!--
+-->
+
 <table class="table table-striped">
 	<thead>
 		<tr>
@@ -44,7 +46,7 @@
 	{% endfor %}
 	</tbody>
 </table>
--->
+
 </div>
 
 </div>
@@ -52,15 +54,16 @@
 
 <script type="text/javascript">
 
+/*
 var options = {
   valueNames: ['RECORDID', 'Name_Deutsch', 'kg_CO2', 'Autor']
 };
+*/
 
-/*
 var options = {
   valueNames: ['name', 'city', 'category', 'tags']
 };
-*/
+
 var entryList = new List('entry-list', options);
 
 </script>
