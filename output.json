@@ -2,10 +2,8 @@
 layout: none
 ---
 [{% for post in site.posts %}{
-	"company-name": "{{post.company-name}}",
-	"city": "{{post.city}}",
-	"state": "{{post.state}}",
-	"employees": "{{post.employees}}",
-	"tags": "{{ post.tags | array_to_sentence_string }}",
-	"categories": "{{post.categories}}"
+	"RECORDID": "{{post.RECORDID}}",
+	"Name_Deutsch": "{{post.Name_Deutsch}}",
+	"kg_CO2": "{{post.kg_CO2}}",
+	"Autor": "{{post.Autor}}"
 }{% if forloop.rindex0 > 0 %},{% endif %}{% endfor %}]
