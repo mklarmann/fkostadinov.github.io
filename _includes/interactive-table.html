@@ -5,6 +5,25 @@
 </div>
 
 <div class="row">
+<table class="table table-sriped">
+	<thead>
+			<th style="width:30%;"><span class="sort" data-sort="RECORDID">RECORDID</span></th>
+			<th style="width:20%;"><span class="sort" data-sort="Name_Deutsch">Name_Deutsch</span></th>
+			<th style="width:20%;"><span class="sort" data-sort="kg_CO2">kg_CO2</span></th>
+			<th style="width:30%;"><span class="sort" data-sort="Autor">Autor</span></th>
+	</thead>
+	<tbody class="list>
+	{% for post in site.posts %}
+		<tr>
+			<td class="name">{{ post.RECORDID}}</td>
+			<td class="city">{{ post.Name_Deutsch }}</td>
+			<td class="category">{{ post.kg_CO2 }}</td>
+			<td class="tags">{{ post.Autor }}</td>
+		</tr>
+	{% endfor %}
+	</tbody>
+</table>
+<!--
 <table class="table table-striped">
 	<thead>
 		<tr>
@@ -25,6 +44,7 @@
 	{% endfor %}
 	</tbody>
 </table>
+-->
 </div>
 
 </div>
