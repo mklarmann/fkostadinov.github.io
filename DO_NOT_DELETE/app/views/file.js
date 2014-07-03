@@ -20,9 +20,381 @@ var cookie = require('../cookie');
 var templates = require('../../dist/templates');
 
 var jsonform = require('jsonform');
-var jsonFormFormatObj = require('jsonform_format.json');
+//var blah = require('./jsonform_format.json');
+//var edbformat = require('edbformat');
 
 module.exports = Backbone.View.extend({
+
+  jsonFormFormatObj: {
+    "schema": {
+	  "@MOID": {
+	    "type": "string",
+		"title": "@MOID"
+	  },
+	  "@RECORDID": {
+	    "type": "string",
+		"title": "@RECORDID"
+	  },
+	  "ID": {
+	    "type": "string",
+		"title": "ID"
+	  },
+	  "Name_Deutsch": {
+	    "type": "string",
+		"title": "Name Deutsch"
+	  },
+	  "Std_Herkunft": {
+	    "type": "string",
+		"title": "Std Herkunft"
+	  },
+	  "kg_CO2": {
+	    "type": "string",
+		"title": "kg CO2"
+	  },
+	  "Alternativen": {
+	    "type": "string",
+		"title": "Alternativen"
+	  },
+	  "Auswahl_sortieren": {
+	    "type": "string",
+		"title": "Auswahl sortieren"
+	  },
+	  "Autor": {
+	    "type": "string",
+		"title": "Autor"
+	  },
+	  "Backgroundinfo": {
+	    "type": "string",
+		"title": "Background-Info"
+	  },
+	  "Beschreibung": {
+	    "type": "textarea",
+		"title": "Beschreibung"
+	  },
+	  "CO2_Berechnung": {
+	    "type": "string",
+		"title": "CO2 Berechnung"
+	  },
+	  "CO2_log": {
+	    "type": "string",
+		"title": "CO2 Log"
+	  },
+	  "Datenqualität": {
+	    "type": "string",
+		"title": "Datenqualitaet"
+	  },
+	  "Datenverknüpfung": {
+	    "type": "string",
+		"title": "Datenverknuepfung"
+	  },
+	  "Datenwichtigkeit": {
+	    "type": "string",
+		"title": "Datenwichtigkeit"
+	  },
+	  "Eingabedatum": {
+	    "type": "string",
+		"title": "Eingabedatum"
+	  },
+	  "Field_116": {
+	    "type": "string",
+		"title": "Field_116"
+	  },
+	  "Gelöscht": {
+	    "type": "string",
+		"title": "Geloescht"
+	  },
+	  "Herkuenfte": {
+	    "type": "string",
+		"title": "Herkuenfte"
+	  },
+	  "Herkunft": {
+	    "type": "string",
+		"title": "Herkunft"
+	  },
+	  "Herstellungen": {
+	    "type": "string",
+		"title": "Herstellungen"
+	  },
+	  "Herstellungen_Faktoren": {
+	    "type": "string",
+		"title": "Herstellungen Faktoren"
+	  },
+	  "Interesting_Facts": {
+	    "type": "string",
+		"title": "Interesting Facts"
+	  },
+	  "ISO_Standart": {
+	    "type": "string",
+		"title": "ISO Standard"
+	  },
+	  "istVerlinkt": {
+	    "type": "string",
+		"title": "istVerlinkt"
+	  },
+	  "Kategorie": {
+	    "type": "string",
+		"title": "Kategorie"
+	  },
+	  "kombiniert": {
+	    "type": "string",
+		"title": "kombiniert"
+	  },
+	  "Kommentar": {
+	    "type": "textarea",
+		"title": "Kommentar"
+	  },
+	  "Konservierungen": {
+	    "type": "string",
+		"title": "Konservierungen"
+	  },
+	  "Konservierungen_Faktoren": {
+	    "type": "string",
+		"title": "Konservierungen Faktoren"
+	  },
+	  "Konsistenz": {
+	    "type": "string",
+		"title": "Konsistenz"
+	  },
+	  "Name_Deutsch_Spezifikation": {
+	    "type": "string",
+		"title": "Name Deutsch Spezifikation"
+	  },
+	  "Name_Englisch": {
+	    "type": "string",
+		"title": "Name Englisch"
+	  },
+	  "Name_Franzoesisch": {
+	    "type": "string",
+		"title": "Name Franzoesisch"
+	  },
+	  "OBJEKT-ID_ABGLEICHSFELD": {
+	    "type": "string",
+		"title": "Objekt ID Abgleichsfeld"
+	  },
+	  "Parent": {
+	    "type": "string",
+		"title": "Parent"
+	  },
+	  "Quellenangaben": {
+	    "type": "textarea",
+		"title": "Quellenangaben"
+	  },
+	  "Review_notwendig": {
+	    "type": "string",
+		"title": "Review notwendig"
+	  },
+	  "Saisonabhaengig": {
+	    "type": "string",
+		"title": "Saisonabhaengig"
+	  },
+	  "Saisonbeginn": {
+	    "type": "string",
+		"title": "Saisonbeginn"
+	  },
+	  "Saisonende": {
+	    "type": "string",
+		"title": "Saisonende"
+	  },
+	  "Sortierlistenschlüssel": {
+	    "type": "string",
+		"title": "Sortierlistenschlüssel"
+	  },
+	  "Spezifikation": {
+	    "type": "string",
+		"title": "Spezifikation"
+	  },
+	  "Std_Dosierungseinheit": {
+	    "type": "string",
+		"title": "Std_Dosierungseinheit"
+	  },
+	  "Stueckmasse": {
+	    "type": "string",
+		"title": "Stueckmasse"
+	  },
+	  "Synonyme": {
+	    "type": "string",
+		"title": "Synonyme"
+	  },
+	  "Tags": {
+	    "type": "string",
+		"title": "Tags"
+	  },
+	  "Teilprozessdokumentation": {
+	    "type": "textarea",
+		"title": "Teilprozessdokumentation"
+	  },
+	  "Verarbeitungen": {
+	    "type": "string",
+		"title": "Verarbeitungen"
+	  },
+	  "Verarbeitungen_Faktoren": {
+	    "type": "string",
+		"title": "Verarbeitungen Faktoren"
+	  },
+	  "Verlinkung": {
+	    "type": "string",
+		"title": "Verlinkung"
+	  },
+	  "Verpackungen": {
+	    "type": "string",
+		"title": "Verpackungen"
+	  },
+	  "Verpackungen_Faktoren": {
+	    "type": "string",
+		"title": "Verpackungen_Faktoren"
+	  }
+	},
+	
+	// This will be injected when an edb file is loaded
+	"value": null,
+	
+	// Important: We must re-bind this function to the owner of updateFile before calling it
+	"onSubmitValid": function(values) {
+	  this.updateFile();
+    }
+  },
+
+/*
+  jsonFormFormatObj: {
+    "schema": {
+	  "ERRORCODE": {
+	    "type": "string",
+		"title": "ERRORCODE"
+	  },
+	  "DATABASE": {
+	    "type": "string",
+		"title": "DATABASE"
+	  },
+	  "LAYOUT": {
+	    "type": "string",
+		"title": "LAYOUT"
+	  },
+	  "ROW": {
+	    "type": "array",
+		"items": {
+		  "type": "object",
+		  "title": "Ingredient",
+		  "properties": {
+		    "@MOID": {
+			  "type": "string",
+			  "title": "@MOID"
+			},
+			"@RECORDID": {
+			  "type": "string",
+			  "title": "@RECORDID"
+			},
+			"ID": {
+			  "type": "string",
+			  "title": "ID"
+			},
+			"Name_Deutsch": {
+			  "type": "string",
+			  "title": "Name_Deutsch"
+			}
+		  }
+		}
+	  }
+	},
+	
+	form: [{
+	  "type": "tabarray",
+	  "items": [{
+	    "type": "section",
+		"legend": "{{idx}}. {{value}}",
+		"items": [
+		  "ROW"
+		]		
+	  }]
+	}],
+	
+	// This will be injected when an edb file is loaded
+	"value": null,
+	
+	// Important: We must re-bind this function to the owner of updateFile before calling it
+	"onSubmitValid": function(values) {
+	  this.updateFile();
+    }
+  },
+*/
+/*  
+  jsonFormFormatObj: {	
+	"schema":
+	{
+	  "name_de":
+      {
+		"type": "string",
+		"title": "Name Deutsch",
+		"required": true
+      },
+	  "specification":
+	  {
+	    "type": "string",
+		"title": "Spezifikation"
+	  },
+	  "synonyms":
+	  {
+	    "type": "string",
+		"title": "Synonyme"
+	  },
+	  "name_en":
+	  {
+	    "type": "string",
+		"title": "Name Englisch"
+	  },
+	  "name_fr":
+	  {
+	    "type": "string",
+		"title": "Name Franz."
+	  },
+	  "kg_co2_eq_per_kg": {
+	    "type": "number",
+		"title": "kg CO2-Aeq./kg"
+	  },
+	  "id":
+	  {
+	    "type": "string",
+		"title": "ID"
+	  },
+	  "tags":
+	  {
+	    "type": "string",
+		"title": "Tags",
+		"required": true
+	  },
+	  "isCombinedProduct":
+	  {
+	    "type": "boolean",
+		"title": "Kombiniertes Produkt"
+	  },
+	  "production":
+	  {
+	    "type": "string",
+		"title": "Herstellung",
+		"enum": ["konventionell", "GH", "Bio"]
+	  },
+	  "background_info": 
+	  {
+	    "type": "string",
+		"title": "Background Info"
+	  },
+	  "co2_calculation":
+	  {
+	    "type": "textarea",
+		"title": "CO2 Berechnung"
+	  }
+	},
+	  
+	// This will be injected when an edb file is loaded
+	"value": null,
+	
+	// Important: We must re-bind this function to the owner of updateFile before calling it
+	"onSubmitValid": function(values) {
+	  this.updateFile();
+    }
+  },
+*/
+
+
   id: 'post',
 
   template: templates.file,
@@ -308,6 +680,7 @@ module.exports = Backbone.View.extend({
   },
 
   initEdbEditor: function() {
+ 	
     var self = this;
 	var contentStr = this.model.get('content') || '';
 	
