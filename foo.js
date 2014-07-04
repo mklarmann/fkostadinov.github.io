@@ -1,0 +1,3 @@
+var baz = {
+	"required": "bar"
+};
