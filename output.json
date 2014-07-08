@@ -5,5 +5,5 @@ layout: none
 	"RECORDID": "{{ edb[1].RECORDID }}",
 	"Name_Deutsch": "{{ edb[1].Name_Deutsch }}",
 	"kg_CO2": "{{ edb[1].kg_CO2 }}",
-	"Autor": "{{ edb[1].Autor }}"
+	"File": "{{ edb[0] }}.json"
 }{% if forloop.rindex0 > 0 %},{% endif %}{% endfor %}]
