@@ -7,9 +7,7 @@ Alternativen: "3,4,5,6,7,830"
 Auswahl_sortieren: Extra
 Autor: Pjotr Petrovic
 Backgroundinfo: null
-Beschreibung: 
-  - "Autor/Datum/Kommentartyp \n\n\nCO2-Berechnung\n\n\nTeilprozessdokumentation\n\n\nDatenverknüpfung \n\n\nInteresting Facts\n\n\nProduktionssystem\n\n\nQuellenangaben\n\n\nIso-standard\n\n\nKommentar\n\nKeine Quelle vorhanden. Quellenangabe muss dringend gesucht werden. Davor als äusserst grobe Schätzung behandeln.\n\n"
-  - "Autor/Datum/Kommentartyp CO2-BerechnungTeilprozessdokumentationDatenverknüpfung Interesting FactsProduktionssystemQuellenangabenIso-standardKommentarKeine Quelle vorhanden. Quellenangabe muss dringend gesucht werden. Davor als äusserst grobe Schätzung behandeln."
+Beschreibung: "Change Autor/Datum/Kommentartyp CO2-BerechnungTeilprozessdokumentationDatenverknüpfung Interesting FactsProduktionssystemQuellenangabenIso-standardKommentarKeine Quelle vorhanden. Quellenangabe muss dringend gesucht werden. Davor als äusserst grobe Schätzung behandeln."
 CO2_Berechnung: 
   - "Wert aus Quelle ist 1.56 kg CO2Äq / kg, 200 km transport still included\n"
   - "Wert aus Quelle ist 1.56 kg CO2Äq / kg, 200 km transport still included"
