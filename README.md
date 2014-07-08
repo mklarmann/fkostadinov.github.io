@@ -1,5 +1,11 @@
-Jekyll-DB
-=========
+Eaternity EDB-Editor
+====================
+
+This program allows to view and edit Eaternity data files online. It uses Jekyll-DB to display a list of available files and Prose.io for versioning and editing.
+
+TODO:
+
+
 
 An easy way to use Jekyll and Github Pages as a "database".
 
