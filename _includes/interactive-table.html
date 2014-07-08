@@ -15,12 +15,12 @@
 		</tr>
 	</thead>
 	<tbody class="list">
-	{% for post in site.posts %}
+	{% for edb in site.data.edbs %}
 		<tr>
-			<td class="RECORDID">{{ post.RECORDID }}</td>
-			<td class="Name_Deutsch">{{ post.Name_Deutsch }}</td>
-			<td class="kg_CO2">{{ post.kg_CO2 }}</td>
-			<td class="Autor">{{ post.Autor }}</td>
+			<td class="RECORDID">{{ edb.RECORDID }}</td>
+			<td class="Name_Deutsch">{{ edb.Name_Deutsch }}</td>
+			<td class="kg_CO2">{{ edb.kg_CO2 }}</td>
+			<td class="Autor">{{ edb.Autor }}</td>
 		</tr>
 	{% endfor %}
 	</tbody>

@@ -1,7 +1,7 @@
 ---
 layout: none
 ---
-[{% for edb in site.data.edbs %}{
+[{% for post in site.posts %}{
 	"RECORDID": "{{ post.RECORDID }}",
 	"Name_Deutsch": "{{ post.Name_Deutsch }}",
 	"kg_CO2": "{{ post.kg_CO2 }}",
