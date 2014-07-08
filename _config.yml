@@ -3,7 +3,7 @@ exclude:
   - JEKYLL_DB/
 prose:
   # rooturl: "_posts"
-  siteurl: 'http://prose.io/#mklarmann/edb-test/'
+  siteurl: 'http://prose.io/#fkostadinov/fkostadinov.github.io/'
   ignore:
     # - _prose.yml
   metadata:
