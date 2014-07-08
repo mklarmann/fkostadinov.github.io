@@ -7,7 +7,7 @@ prose:
   ignore:
     # - _prose.yml
   metadata:
-    _posts:
+    _data/edbs:
       - name: "MODID"
         field:
           element: "text"
