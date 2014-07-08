@@ -50,7 +50,7 @@ prose:
           label: "Backgroundinfo"
       - name: "Beschreibung"
         field:
-          element: "text"
+          element: "textarea"
           label: "Beschreibung" 
       - name: "CO2_Berechnung"
         field:
