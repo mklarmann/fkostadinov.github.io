@@ -17,10 +17,10 @@
 	<tbody class="list">
 	{% for edb in site.data.edbs %}
 		<tr>
-			<td class="RECORDID">{{ edb.RECORDID }}</td>
-			<td class="Name_Deutsch">{{ edb.Name_Deutsch }}</td>
-			<td class="kg_CO2">{{ edb.kg_CO2 }}</td>
-			<td class="Autor">{{ edb.Autor }}</td>
+			<td class="RECORDID">{{ edb[1].RECORDID }}</td>
+			<td class="Name_Deutsch">{{ edb[1].Name_Deutsch }}</td>
+			<td class="kg_CO2">{{ edb[1].kg_CO2 }}</td>
+			<td class="Autor">{{ edb[1].Autor }}</td>
 		</tr>
 	{% endfor %}
 	</tbody>

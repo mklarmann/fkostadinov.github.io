@@ -2,8 +2,8 @@
 layout: none
 ---
 [{% for edb in site.data.edbs %}{
-	"RECORDID": "{{ post.RECORDID }}",
-	"Name_Deutsch": "{{ post.Name_Deutsch }}",
-	"kg_CO2": "{{ post.kg_CO2 }}",
-	"Autor": "{{ post.Autor }}"
+	"RECORDID": "{{ edb[1].RECORDID }}",
+	"Name_Deutsch": "{{ edb[1].Name_Deutsch }}",
+	"kg_CO2": "{{ edb[1].kg_CO2 }}",
+	"Autor": "{{ edb[1].Autor }}"
 }{% if forloop.rindex0 > 0 %},{% endif %}{% endfor %}]
