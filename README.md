@@ -1,4 +1,4 @@
-## Eaternity Database Docu
+# Eaternity Database Docu
 [![Build Status](https://travis-ci.org/prose/prose.svg?branch=master)](https://travis-ci.org/prose/prose)
 
 The Eaternity Database is a collection of files and tools.
@@ -6,7 +6,26 @@ The Eaternity Database is a collection of files and tools.
 2. [Jekyll-DB](https://github.com/rypan/jekyll-db) is used to display an overview of all ingredients to the user. The user can search for keywords and select the file to edit.
 3. Data is edited in [Prose](http://prose.io/). Thus, the full advantage of GitHub's versioning system is offered to the users.
 
+## File Structure
+Every ingredient is stored in the JSON data format in its own .json file. The files are basically flat, i.e. there is no nested, hierarchical structure inside each file. Yet, the files are not exactly 100% compliant to the JSON specification: Additionally to containing fully valid JSON, in the beginning and the end of each file a YAML-frontmatter header and footer string ("---") is added. Example:
+<code>
+---
+{
+  "ID": "8",
+  "Name_Deutsch": "Sesamöl",
+  "Std_Herkunft": "Schweiz",
+  "kg_CO2": "2.67",
+  ...
+}
+---
+</code>
 
+Each file however serves a double purpose: Not only is it valid JSON data, but 
+
+## Jekyll-DB
+
+
+## Prose
 
 
 
