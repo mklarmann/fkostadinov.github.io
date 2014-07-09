@@ -21,13 +21,13 @@ Every ingredient is stored in the JSON data format in its own .json file. The fi
 Each file therefore serves a double purpose. Interpreted as a JSON file, it can be processed by JSON parsers. At the same time, it can be processed by Jekyll's frontmatter parsers (which [accepts both YAML and JSON equally](https://github.com/dworthen/js-yaml-front-matter)).
 
 Furthermore, all files are placed in a <code>_data/edbs/</code> subdirectory. [As per Jekyll v2.1.0 all YAML- or JSON-files placed in such a subdirectory can be accessed and looped over via Liquid templates](http://jekyllrb.com/docs/datafiles/) like this: <code>{% for edb in site.data.edbs %} ...do something... {% endfor %}</code>. --__(Attention: On the 9th July 2014 the datafiles examples in the linked documentation contained errors, for more info see__ [here](https://github.com/jekyll/jekyll/pull/2395).) <code>edb[0]</code> will contain the filename (without leading path and without file ending), whereas <code>edb[1]</code> will contain the key/value-pairs specified in YAML or JSON. It is then easy to build a HTML page containing a list of all ingredients with selected attributes: <code>
-...
-<ul>
-{% for edb in site.data.edbs %}
-  <li>Filename: {{ edb[0] }}.json; Name_Deutsch: {{ edb[1].Name_Deutsch }}</li>
-{% endfor %}
-</ul>
-...
+...  
+<ul>  
+{% for edb in site.data.edbs %}  
+  <li>Filename: {{ edb[0] }}.json; Name_Deutsch: {{ edb[1].Name_Deutsch }}</li>  
+{% endfor %}  
+</ul>  
+...  
 </code>
 
 ## Jekyll-DB
