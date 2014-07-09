@@ -1,4 +1,14 @@
-## EDB Prose [![Build Status](https://travis-ci.org/prose/prose.svg?branch=master)](https://travis-ci.org/prose/prose)
+## Eaternity Database Docu
+[![Build Status](https://travis-ci.org/prose/prose.svg?branch=master)](https://travis-ci.org/prose/prose)
+
+The Eaternity Database is a collection of files and tools.
+1. Ingredient data is stored in the JSON data format in a [non-public GitHub repository](http://prose.io/#eaternity-agent/Eaternity-Datenbank). There is one .json file per ingredient.
+2. [Jekyll-DB](https://github.com/rypan/jekyll-db) is used to display an overview of all ingredients to the user. The user can search for keywords and select the file to edit.
+3. Data is edited in [Prose](http://prose.io/). Thus, the full advantage of GitHub's versioning system is offered to the users.
+
+
+
+
 
 __Attention: This is an enhanced version of Prose in combination with JSON Form.__
 
