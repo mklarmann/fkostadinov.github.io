@@ -9,7 +9,7 @@ The Eaternity Database is a collection of files and tools.
 ## File Structure
 Every ingredient is stored in the JSON data format in its own .json file. The files are basically flat, i.e. there is no nested, hierarchical structure inside each file. Yet, the files are not exactly 100% compliant to the JSON specification: Additionally to containing fully valid JSON, in the beginning and the end of each file a YAML-frontmatter header and footer string ("---") is added. Example:
 <code>
----
+\-\-\-
 {
   "ID": "8",
   "Name_Deutsch": "Sesamöl",
@@ -17,7 +17,7 @@ Every ingredient is stored in the JSON data format in its own .json file. The fi
   "kg_CO2": "2.67",
   ...
 }
----
+\-\-\-
 </code>
 
 Each file however serves a double purpose: Not only is it valid JSON data, but 
