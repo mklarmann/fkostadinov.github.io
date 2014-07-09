@@ -20,7 +20,7 @@ Every ingredient is stored in the JSON data format in its own .json file. The fi
 
 Each file therefore serves a double purpose. Interpreted as a JSON file, it can be processed by JSON parsers. At the same time, it can be processed by Jekyll's frontmatter parsers (which [accepts both YAML and JSON equally](https://github.com/dworthen/js-yaml-front-matter)).
 
-Furthermore, all files are placed in a <code>_data/edbs/</code> subdirectory. [As per Jekyll v2.1.0 all YAML- or JSON-files placed in such a subdirectory can be accessed and looped over via Liquid templates](http://jekyllrb.com/docs/datafiles/) like this: <code>{% for edb in site.data.edbs %} ...do something... {% endfor %}</code>. **(Attention: On the 9th July 2014 the datafiles examples in the linked documentation contained errors, for more info see [here](https://github.com/jekyll/jekyll/pull/2395).)** <code>edb[0]</code> will contain the filename (without leading path and without file ending), whereas <code>edb[1]</code> will contain the key/value-pairs specified in YAML or JSON. It is now easy to build a HTML page containing a list of all ingredients with selected attributes: <code>
+Furthermore, all files are placed in a <code>_data/edbs/</code> subdirectory. [As per Jekyll v2.1.0 all YAML- or JSON-files placed in such a subdirectory can be accessed and looped over via Liquid templates](http://jekyllrb.com/docs/datafiles/) like this: <code>{% for edb in site.data.edbs %} ...do something... {% endfor %}</code>. **(Attention: On the 9th July 2014 the datafiles examples in the linked documentation contained errors, for more info see [here](https://github.com/jekyll/jekyll/pull/2395).)** <code>edb[0]</code> will contain the filename (without leading path and without file ending), whereas <code>edb[1]</code> will contain the key/value-pairs specified in YAML or JSON. It is now easy to build a HTML page containing a list of all ingredients with selected attributes: <code>  
 ...  
 &lt;ul&gt;  
 {% for edb in site.data.edbs %}  
@@ -28,10 +28,10 @@ Furthermore, all files are placed in a <code>_data/edbs/</code> subdirectory. [A
 {% endfor %}  
 &lt;/ul&gt;  
 ...</code>  
-**Attention: On the 9th July 2014 [GitHub Pages was still running Jekyll 1.5.1](https://pages.github.com/versions/).** The datafiles feature is therefore currently not available. To use it, a Jekyll server instance with version >= 2.1.0 must be run.
+**(Attention: On the 9th July 2014 [GitHub Pages was still running Jekyll 1.5.1](https://pages.github.com/versions/). The datafiles feature is therefore currently not available on GitHub pages. To use it, a Jekyll server instance with version >= 2.1.0 must be run.)**
 
 ## 2. Jekyll-DB
-
+[Jekyll-DB](https://github.com/rypan/jekyll-db) is an open source and easy-to-use tool based on [List.js](http://listjs.com/) to index, filter, search, sort and display html tables and lists. Basically, Jekyll-DB allows to index YAML- (or JSON-) frontmatter of posts placed in the <code>_posts</code> folder. It builds an adaptable display table that can be searched and filtered by keywords and sorted by columns. Data columns can be specified, as can the number of displayed items. Although the official documentation does not mention it explicitly, Jekyll-DB also works with files placed inside a <code>_data/edbs/</code> subdirectory. If a <code>_posts</code> directory is used, in Liquid templates frontmatter data can be accessed directly such as <code>{% for post in site.posts %} ...{{ post.myFrontmatterKey }}... {% endfor %}</code>. For <code>_data</code> subdirectories, additionally indices must be used to differentiate between frontmatter filename at index 0 and frontmatter content at index 1: <code>{% for edb in site.data.edbs %} ...{{ edb[1].myFrontmatterKey }}... {% endfor %}</code> . As mentioned above, this of course requires a Jekyll server instance >= v.2.1.0.
 
 ## 3. Prose
 
