@@ -40,7 +40,6 @@ If JSON files inside a <code>_data</code> subdirectory should be indexed, a Jeky
 ## 3. Prose
 Whereas Jekyll-DB allows to display data, [Prose](http://prose.io/) can be used to actually edit the underlying data. Prose is an open-source editor built on top of GitHub pages. There is a free-to-use online instance running at the given link, but it is also possible to run one's own Prose in any YAML-aware webserver such as Jekyll or a [Node.js](http://nodejs.org/) web server. Because as stated above all files are also valid frontmatter files, 
 
-# TODO:
 There are currently two alternatives how to use Prose: either edit data in Prose's metadata editor, or use an adapted version of Prose running on one's own server instance. Both have their advantages and disadvantages.
 
 # Using Prose's metadata editor
