@@ -42,7 +42,7 @@ Whereas Jekyll-DB allows to display data, [Prose](http://prose.io/) can be used 
 
 There are currently two alternatives how to use Prose: either edit data in Prose's metadata editor, or use an adapted version of Prose running on one's own server instance. Both have their advantages and disadvantages.
 
-# Using Prose's metadata editor
+### Using Prose's metadata editor
 _Advantages:_
 - No redundancy between data and frontmatter - all data is stored as _only_ frontmatter.
 - Prose's online version can be used. No need to run Prose on one's own server.
@@ -53,7 +53,7 @@ _Disadvantages:_
 - Data in textareas is not displayed and saved properly. (On the 09th of July 2014, this bug has been known for 11 months, yet no patch has been provided by the developers so far. There are two provisional solutions to this problem: First, instead of textareas textfields are used. Unfortunately, they don't preserve line breaks and display only little data. Second, there is a "Raw Values" input field for all non-specified frontmatter key/value-pairs. **TODO:** Figure out what happens to line breaks in this case.)
 - Metadata editor input fields too small?
 
-# Using an adapted version of Prose
+### Using an adapted version of Prose
 _Advantages:_
 - Prose can be adapted to one's need. JSONForm can be used to create good-looking forms for data editing.
 
