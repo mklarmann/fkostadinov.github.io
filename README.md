@@ -7,8 +7,8 @@ The Eaternity Database is a collection of files and tools.
 3. Prose: Data is edited in [Prose](http://prose.io/). Thus, the full advantage of GitHub's versioning system is offered to the users.
 
 ## 1. File Structure
-Every ingredient is stored in the JSON data format in its own .json file. The files are basically flat, i.e. there is no nested, hierarchical structure inside each file. Yet, the files are not exactly 100% compliant to the JSON specification: Additionally to containing fully valid JSON, in the beginning and the end of each file a YAML-frontmatter header and footer string ("---") is added. Example: <code>   
-\-\-\-  
+Every ingredient is stored in the JSON data format in its own .json file. The files are basically flat, i.e. there is no nested, hierarchical structure inside each file. Yet, the files are not exactly 100% compliant to the JSON specification: Additionally to containing fully valid JSON, in the beginning and the end of each file a YAML-frontmatter header and footer string ("---") is added. Example:    
+<code>\-\-\-  
 {  
   "ID": "8",  
   "Name_Deutsch": "Sesamöl",  
@@ -20,8 +20,8 @@ Every ingredient is stored in the JSON data format in its own .json file. The fi
 
 Each file therefore serves a double purpose. Interpreted as a JSON file, it can be processed by JSON parsers. At the same time, it can be processed by Jekyll's frontmatter parsers (which [accepts both YAML and JSON equally](https://github.com/dworthen/js-yaml-front-matter)).
 
-Furthermore, all files are placed in a <code>_data/edbs/</code> subdirectory. [As per Jekyll v2.1.0 all YAML- or JSON-files placed in such a subdirectory can be accessed and looped over via Liquid templates](http://jekyllrb.com/docs/datafiles/) like this: <code>{% for edb in site.data.edbs %} ...do something... {% endfor %}</code>. **(Attention: On the 9th July 2014 the datafiles examples in the linked documentation contained errors, for more info see [here](https://github.com/jekyll/jekyll/pull/2395).)** <code>edb[0]</code> will contain the filename (without leading path and without file ending), whereas <code>edb[1]</code> will contain the key/value-pairs specified in YAML or JSON. It is now easy to build a HTML page containing a list of all ingredients with selected attributes: <code>  
-...  
+Furthermore, all files are placed in a <code>_data/edbs/</code> subdirectory. [As per Jekyll v2.1.0 all YAML- or JSON-files placed in such a subdirectory can be accessed and looped over via Liquid templates](http://jekyllrb.com/docs/datafiles/) like this: <code>{% for edb in site.data.edbs %} ...do something... {% endfor %}</code>. **(Attention: On the 9th July 2014 the datafiles examples in the linked documentation contained errors, for more info see [here](https://github.com/jekyll/jekyll/pull/2395).)** <code>edb[0]</code> will contain the filename (without leading path and without file ending), whereas <code>edb[1]</code> will contain the key/value-pairs specified in YAML or JSON. It is now easy to build a HTML page containing a list of all ingredients with selected attributes:    
+<code>...  
 &lt;ul&gt;  
 {% for edb in site.data.edbs %}  
   &lt;li&gt;Filename: {{ edb[0] }}.json; Name_Deutsch: {{ edb[1].Name_Deutsch }}&lt;/li&gt;  
@@ -36,6 +36,10 @@ Although the official documentation does not state it explicitly, Jekyll-DB not 
 If JSON files inside a <code>_data</code> subdirectory should be indexed, a Jekyll server instance >= v.2.1.0 is required. Indexing frontmatter only in a <code>_posts</code> directory also works with older Jekyll server instances.
 
 ## 3. Prose
+Whereas Jekyll-DB allows to display data, [Prose](http://prose.io/) can be used to actually edit the underlying data. Prose is an open-source editor built on top of GitHub pages. There is a free-to-use online instance running at the given link, but it is also possible to run one's own Prose in any YAML-aware webserver such as Jekyll or a [Node.js](http://nodejs.org/) web server.
+
+
+
 
 
 
