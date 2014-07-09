@@ -50,7 +50,7 @@ _Advantages:_
 
 _Disadvantages:_
 - Apparently, JSON frontmatter is changed into YAML, i.e. curly brackets and commas are dropped as soon as the metadata is saved. (**TODO:** Try this out. An alternative would be to keep all files in the YAML format right from the start. YAML is actually a superset of JSON. For the difference, see [this thread](http://stackoverflow.com/questions/1726802/what-is-the-difference-between-yaml-and-json-when-to-prefer-one-over-the-other).)
-- Data in textareas is not displayed and saved properly. (On the 09th of July 2014, this bug has been known for 11 months, yet no patch has been provided by the developers so far. There are two provisional solutions to this problem: First, instead of textareas textfields are used. Unfortunately, they don't preserve line breaks and display only little data. Second, there is a "Raw Values" input field for all non-specified frontmatter key/value-pairs. **TODO:** Figure out what happens to line breaks in this case.)
+- Data in textareas is not displayed and saved properly. (On the 09th of July 2014, [this bug has been known for 11 months](https://github.com/prose/prose/issues/582), yet no patch has been provided by the developers so far. There are two provisional solutions to this problem: First, instead of textareas textfields are used. Unfortunately, they don't preserve line breaks and display only little data. Second, there is a "Raw Values" input field for all non-specified frontmatter key/value-pairs. **TODO:** Figure out what happens to line breaks in this case.)
 - Metadata editor input fields too small?
 
 ### Using an adapted version of Prose
