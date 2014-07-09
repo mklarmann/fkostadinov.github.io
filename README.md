@@ -1,81 +1,17 @@
-Eaternity EDB-Editor
-====================
+## EDB Prose [![Build Status](https://travis-ci.org/prose/prose.svg?branch=master)](https://travis-ci.org/prose/prose)
 
-This program allows to view and edit Eaternity data files online. It uses Jekyll-DB to display a list of available files and Prose.io for versioning and editing.
+__Attention: This is an enhanced version of Prose in combination with JSON Form.__
 
-TODO:
+Prose provides a beautifully simple content authoring environment for [CMS-free websites](http://developmentseed.org/blog/2012/07/27/build-cms-free-websites/). It's a web-based interface for managing content on [GitHub](http://github.com). Use it to create, edit, and delete files, and save your changes directly to GitHub. Host your website on [GitHub Pages](http://pages.github.com) for free, or set up your own [GitHub webhook server](http://developmentseed.org/blog/2013/05/01/introducing-jekyll-hook/).
 
+[Read more about Prose](http://prose.io/#about)
 
+### Setting up Prose with your site
 
-An easy way to use Jekyll and Github Pages as a "database".
+Prose supports configuration settings with a variety of options, which makes it easy to adjust the application to support your project needs. Read the [Getting Started Guide](https://github.com/prose/prose/wiki/Getting-Started) to learn more.
 
-See it in action: [http://rypan.github.io/jekyll-db](http://rypan.github.io/jekyll-db)
+### Installation and developing
 
-### Use posts as entries
+Prose is hosted at [Prose.io](http://prose.io), or you can use on your own server. For installation instructions and contributing guidelines, please [read contributing.md](CONTRIBUTING.md).
 
-```
----
-layout: entry
-company-name: AchieveMint
-city: San Francisco
-state: California
-employees: 100
-
-categories:
-- startup
-
-tags:
-- wellness
-- consumer
-- employer
----
-```
-
-### Output your fields in a table
-
-```
-<tbody class="list">
-{% for post in site.posts %}
-	<tr>
-		<td class="name">{{ post.company-name }}</td>
-		<td class="city">{{ post.city }}</td>
-		<td class="category">{{ post.categories }}</td>
-		<td class="tags">{{ post.tags | array_to_sentence_string }}</td>
-	</tr>
-{% endfor %}
-</tbody>
-```
-
-### Index the appropriate fields
-
-```
-<script type="text/javascript">
-
-var options = {
-  valueNames: ['name', 'city', 'category', 'tags']
-};
-
-var entryList = new List('entry-list', options);
-
-</script>
-```
-
-### Output your data as JSON
-
-```
----
-layout: none
----
-[{% for post in site.posts %}{
-	"company-name": "{{post.company-name}}",
-	"city": "{{post.city}}",
-	"state": "{{post.state}}",
-	"employees": "{{post.employees}}",
-	"tags": "{{ post.tags | array_to_sentence_string }}",
-	"categories": "{{post.categories}}"
-}{% if forloop.rindex0 > 0 %},{% endif %}{% endfor %}]
-```
-
-### Credits
-
-All the credits go to [Jekyll](http://jekyllrb.com/), [ListJS](http://listjs.com/) + [Bootstrap](http://getbootstrap.com/). I just pulled the pieces together.
+*Prose is developed and maintained by [Development Seed](http://developmentseed.org).*
