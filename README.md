@@ -22,11 +22,11 @@ Each file therefore serves a double purpose. Interpreted as a JSON file, it can 
 
 Furthermore, all files are placed in a <code>_data/edbs/</code> subdirectory. [As per Jekyll v2.1.0 all YAML- or JSON-files placed in such a subdirectory can be accessed and looped over via Liquid templates](http://jekyllrb.com/docs/datafiles/) like this: <code>{% for edb in site.data.edbs %} ...do something... {% endfor %}</code>. --__(Attention: On the 9th July 2014 the datafiles examples in the linked documentation contained errors, for more info see__ [here](https://github.com/jekyll/jekyll/pull/2395).) <code>edb[0]</code> will contain the filename (without leading path and without file ending), whereas <code>edb[1]</code> will contain the key/value-pairs specified in YAML or JSON. It is then easy to build a HTML page containing a list of all ingredients with selected attributes: <code>
 ...  
-<ul>  
+&lt;ul>  
 {% for edb in site.data.edbs %}  
-  <li>Filename: {{ edb[0] }}.json; Name_Deutsch: {{ edb[1].Name_Deutsch }}</li>  
+  &lt;li>Filename: {{ edb[0] }}.json; Name_Deutsch: {{ edb[1].Name_Deutsch }}&lt;/li>  
 {% endfor %}  
-</ul>  
+&lt;/ul>  
 ...  
 </code>
 
