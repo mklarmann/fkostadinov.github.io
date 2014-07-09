@@ -32,8 +32,32 @@ Furthermore, all files are placed in a <code>_data/edbs/</code> subdirectory. [A
 
 ## 2. Jekyll-DB
 [Jekyll-DB](https://github.com/rypan/jekyll-db) is an open source and easy-to-use tool based on [List.js](http://listjs.com/) to index, filter, search, sort and display html tables and lists. Basically, Jekyll-DB allows to index YAML- (or JSON-) frontmatter of (markdown or html) posts placed in the <code>_posts</code> folder. It builds an adaptable display table that can be searched and filtered by keywords and sorted by columns. It is also possible to place links in the display table e.g. to a open a given post item in a GitHub or Prose editor. Data columns can be specified, as can the number of displayed items.
+
 Although the official documentation does not state it explicitly, Jekyll-DB not only works with files placed inside a <code>_posts</code> directory, but also with files in a <code>_data/edbs/</code> subdirectory. If a <code>_posts/</code> directory is used, in Liquid templates frontmatter data can be accessed directly, e.g. <code>{% for post in site.posts %} ...{{ post.myFrontmatterKey }}... {% endfor %}</code>. For <code>_data/edbs/</code> subdirectories, additionally indices must be used to differentiate between filename at index 0 and frontmatter content at index 1: <code>{% for edb in site.data.edbs %} ...{{ edb[1].myFrontmatterKey }}... {% endfor %}</code>.
+
 If JSON files inside a <code>_data</code> subdirectory should be indexed, a Jekyll server instance >= v.2.1.0 is required. Indexing frontmatter only in a <code>_posts</code> directory also works with older Jekyll server instances.
 
 ## 3. Prose
-Whereas Jekyll-DB allows to display data, [Prose](http://prose.io/) can be used to actually edit the underlying data. Prose is an open-source editor built on top of GitHub pages. There is a free-to-use online instance running at the given link, but it is also possible to run one's own Prose in any YAML-aware webserver such as Jekyll or a [Node.js](http://nodejs.org/) web server.
+Whereas Jekyll-DB allows to display data, [Prose](http://prose.io/) can be used to actually edit the underlying data. Prose is an open-source editor built on top of GitHub pages. There is a free-to-use online instance running at the given link, but it is also possible to run one's own Prose in any YAML-aware webserver such as Jekyll or a [Node.js](http://nodejs.org/) web server. Because as stated above all files are also valid frontmatter files, 
+
+# TODO:
+There are currently two alternatives how to use Prose: either edit data in Prose's metadata editor, or use an adapted version of Prose running on one's own server instance. Both have their advantages and disadvantages.
+
+# Using Prose's metadata editor
+_Advantages:_
+- No redundancy between data and frontmatter - all data is stored as _only_ frontmatter.
+- Prose's online version can be used. No need to run Prose on one's own server.
+- No need for coding, all required metadata editor fields can be configured in a <code>prose</code> section in a <code>_config.yml</code> or in a <code>_prose.yml</code>.
+
+_Disadvantages:_
+- Apparently, JSON frontmatter is changed into YAML, i.e. curly brackets and commas are dropped as soon as the metadata is saved.
+- Data in textareas is not displayed and saved properly. (On the 09th of July 2014, this bug has been known for 11 months, yet no patch has been provided by the developers so far.)
+
+# Using an adapted version of Prose
+_Advantages:_
+- Prose can be adapted to one's need. JSONForm can be used to create good-looking forms for data editing.
+
+_Disadvantages:_
+- Redundancy of data and frontmatter. (TODO: Figure out whether JSONForm could be applied for editing frontmatter data.)
+- Requires running one's own server instance.
+- Need to maintain one's own adapted version of Prose.
