@@ -2,11 +2,11 @@
 [![Build Status](https://travis-ci.org/prose/prose.svg?branch=master)](https://travis-ci.org/prose/prose)
 
 The Eaternity Database is a collection of files and tools.
-1. Ingredient data is stored in the JSON data format in a [non-public GitHub repository](http://prose.io/#eaternity-agent/Eaternity-Datenbank). There is one .json file per ingredient.
-2. [Jekyll-DB](https://github.com/rypan/jekyll-db) is used to display an overview of all ingredients to the user. The user can search for keywords and select the file to edit.
-3. Data is edited in [Prose](http://prose.io/). Thus, the full advantage of GitHub's versioning system is offered to the users.
+1. File Structure: Ingredient data is stored in the JSON data format in a [non-public GitHub repository](http://prose.io/#eaternity-agent/Eaternity-Datenbank). There is one .json file per ingredient.
+2. Jekyll-DB: [Jekyll-DB](https://github.com/rypan/jekyll-db) is used to display an overview of all ingredients to the user. The user can search for keywords and select the file to edit.
+3. Prose: Data is edited in [Prose](http://prose.io/). Thus, the full advantage of GitHub's versioning system is offered to the users.
 
-## File Structure
+## 1. File Structure
 Every ingredient is stored in the JSON data format in its own .json file. The files are basically flat, i.e. there is no nested, hierarchical structure inside each file. Yet, the files are not exactly 100% compliant to the JSON specification: Additionally to containing fully valid JSON, in the beginning and the end of each file a YAML-frontmatter header and footer string ("---") is added. Example: <code>   
 \-\-\-  
 {  
@@ -20,20 +20,20 @@ Every ingredient is stored in the JSON data format in its own .json file. The fi
 
 Each file therefore serves a double purpose. Interpreted as a JSON file, it can be processed by JSON parsers. At the same time, it can be processed by Jekyll's frontmatter parsers (which [accepts both YAML and JSON equally](https://github.com/dworthen/js-yaml-front-matter)).
 
-Furthermore, all files are placed in a <code>_data/edbs/</code> subdirectory. [As per Jekyll v2.1.0 all YAML- or JSON-files placed in such a subdirectory can be accessed and looped over via Liquid templates](http://jekyllrb.com/docs/datafiles/) like this: <code>{% for edb in site.data.edbs %} ...do something... {% endfor %}</code>. --__(Attention: On the 9th July 2014 the datafiles examples in the linked documentation contained errors, for more info see__ [here](https://github.com/jekyll/jekyll/pull/2395).) <code>edb[0]</code> will contain the filename (without leading path and without file ending), whereas <code>edb[1]</code> will contain the key/value-pairs specified in YAML or JSON. It is then easy to build a HTML page containing a list of all ingredients with selected attributes: <code>
+Furthermore, all files are placed in a <code>_data/edbs/</code> subdirectory. [As per Jekyll v2.1.0 all YAML- or JSON-files placed in such a subdirectory can be accessed and looped over via Liquid templates](http://jekyllrb.com/docs/datafiles/) like this: <code>{% for edb in site.data.edbs %} ...do something... {% endfor %}</code>. --__(Attention: On the 9th July 2014 the datafiles examples in the linked documentation contained errors, for more info see__ [here](https://github.com/jekyll/jekyll/pull/2395).) <code>edb[0]</code> will contain the filename (without leading path and without file ending), whereas <code>edb[1]</code> will contain the key/value-pairs specified in YAML or JSON. It is now easy to build a HTML page containing a list of all ingredients with selected attributes: <code>
 ...  
-&lt;ul>  
+&lt;ul&gt;  
 {% for edb in site.data.edbs %}  
-  &lt;li>Filename: {{ edb[0] }}.json; Name_Deutsch: {{ edb[1].Name_Deutsch }}&lt;/li>  
+  &lt;li&gt;Filename: {{ edb[0] }}.json; Name_Deutsch: {{ edb[1].Name_Deutsch }}&lt;/li&gt;  
 {% endfor %}  
-&lt;/ul>  
-...  
-</code>
+&lt;/ul&gt;  
+...</code>  
+__Attention: On the 9th July 2014 [GitHub Pages was still running Jekyll 1.5.1](https://pages.github.com/versions/).__
 
-## Jekyll-DB
+## 2. Jekyll-DB
 
 
-## Prose
+## 3. Prose
 
 
 
